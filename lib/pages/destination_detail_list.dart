@@ -2,19 +2,53 @@ import 'package:flutter/material.dart';
 
 import '../data/destinationModels.dart';
 
-class DestinationDetailList extends StatelessWidget {
+class DestinationDetailList extends StatefulWidget {
   final DestinationModel destination;
 
   const DestinationDetailList({super.key, required this.destination});
+
+  @override
+  State<DestinationDetailList> createState() => _DestinationDetailListState();
+}
+
+class _DestinationDetailListState extends State<DestinationDetailList> {
+  bool isFavorite = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // 1. AppBar menampilkan judul buku
       appBar: AppBar(
-        title: Text(destination.name),
+        title: Text(widget.destination.name),
         backgroundColor: Colors.green,
         foregroundColor: Colors.white,
+        actions: [
+          IconButton(
+            // Ganti icon berdasarkan kondisi state
+            icon: Icon(
+              isFavorite ? Icons.favorite : Icons.favorite_border,
+              color: isFavorite
+                  ? const Color.fromARGB(255, 244, 54, 187)
+                  : Colors.white,
+            ),
+            onPressed: () {
+              setState(() {
+                isFavorite = !isFavorite; // Toggle true <-> false
+              });
+
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    isFavorite
+                        ? 'Ditambahkan ke Favorit!'
+                        : 'Dihapus dari Favorit!',
+                  ),
+                  duration: const Duration(seconds: 1),
+                ),
+              );
+            },
+          ),
+        ],
       ),
       // 2. Body menampilkan seluruh informasi buku
       body: SingleChildScrollView(
@@ -25,7 +59,7 @@ class DestinationDetailList extends StatelessWidget {
             // Cover Buku
             Center(
               child: Image.network(
-                destination.imageUrl,
+                widget.destination.imageUrl,
                 height: 220,
                 fit: BoxFit.cover,
                 errorBuilder: (ctx, err, stack) =>
@@ -36,7 +70,7 @@ class DestinationDetailList extends StatelessWidget {
 
             // Judul
             Text(
-              destination.name,
+              widget.destination.name,
               style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
@@ -44,17 +78,17 @@ class DestinationDetailList extends StatelessWidget {
             const Divider(height: 28),
             // Informasi Buku
             const SizedBox(height: 4),
-            Text('Kategori: ${destination.category}'),
+            Text('Kategori: ${widget.destination.category}'),
             const SizedBox(height: 4),
-            Text('Lokasi: ${destination.location}'),
+            Text('Lokasi: ${widget.destination.location}'),
             const SizedBox(height: 4),
-            Text('ticketinfo: ${destination.ticketInfo}'),
+            Text('ticketinfo: ${widget.destination.ticketInfo}'),
             const SizedBox(height: 4),
-            Text('Jam Buka: ${destination.openingHours}'),
+            Text('Jam Buka: ${widget.destination.openingHours}'),
             const SizedBox(height: 4),
-            Text('Attraksi: ${destination.attraction} halaman'),
+            Text('Attraksi: ${widget.destination.attraction} halaman'),
             const SizedBox(height: 4),
-            Text('Info lebih lanjut: ${destination.wikipediaUrl} '),
+            Text('Info lebih lanjut: ${widget.destination.wikipediaUrl} '),
             const Divider(height: 28),
             const Text(
               'Deskripsi:',
@@ -62,7 +96,7 @@ class DestinationDetailList extends StatelessWidget {
             ),
             const SizedBox(height: 6),
             Text(
-              destination.description,
+              widget.destination.description,
               textAlign: TextAlign.justify,
               style: const TextStyle(height: 1.5),
             ),
