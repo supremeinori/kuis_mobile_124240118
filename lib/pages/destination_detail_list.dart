@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../data/destinationModels.dart';
@@ -75,13 +74,3 @@ class DestinationDetailList extends StatelessWidget {
     );
   }
 }
-
-// name: "Candi Borobudur",
-//     category: "Wisata sejarah",
-//     location: "Magelang, Jawa Tengah",
-//     description: "Candi Buddha yang terkenal dengan teras bertingkat, relief, dan stupa.",
-//     openingHours: "06.30–16.30",
-//     ticketInfo: "Cek kanal resmi untuk informasi tiket terbaru.",
-//     attraction: "Relief, stupa, arsitektur candi, dan pemandangan sekitar.",
-//     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/7/77/Borobudur-Nothwest-view.jpg",
-//     wikipediaUrl: "https://id.wikipedia.org/wiki/Borobudur",
