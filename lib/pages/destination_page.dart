@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../data/destinationModels.dart';
 import 'login_page.dart';
+import 'destination_detail_list.dart';
 
 class DestinationPage extends StatelessWidget {
   const new({super.key});
@@ -28,9 +29,9 @@ class DestinationPage extends StatelessWidget {
       ),
       body: ListView.builder(
         padding: const EdgeInsets.all(8.0),
-        itemCount: bookList.length,
+        itemCount: destinationList.length,
         itemBuilder: (context, index) {
-          final BookModel book = bookList[index];
+          final DestinationModel destination = destinationList[index];
 
           return Card(
             margin: const EdgeInsets.symmetric(vertical: 6.0),
@@ -40,7 +41,7 @@ class DestinationPage extends StatelessWidget {
                 width: 50,
                 height: 70,
                 child: Image.network(
-                  book.imageUrl,
+                  destination.imageUrl,
                   fit: BoxFit.cover,
                   errorBuilder: (ctx, error, stackTrace) =>
                       const Icon(Icons.broken_image),
@@ -48,24 +49,23 @@ class DestinationPage extends StatelessWidget {
               ),
               // Judul Buku
               title: Text(
-                book.title,
+                destination.name,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: const TextStyle(fontWeight: FontWeight.bold),
               ),
-              // Penulis & Tahun
-              subtitle: Text('${book.author} (${book.year})'),
+              subtitle: Text(' ${destination.location} '),
               // Rating
-              trailing: Text('⭐ ${book.rating}'),
-              // Saat item ditekan -> Pindah ke Book Detail Page
-              // onTap: () {
-              //   Navigator.push(
-              //     context,
-              //     MaterialPageRoute(
-              //       builder: (context) => BookDetailPage(book: book),
-              //     ),
-              //   );
-              // },
+              trailing: Text(' ${destination.category} '),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        DestinationDetailList(destination: destination),
+                  ),
+                );
+              },
             ),
           );
         },
