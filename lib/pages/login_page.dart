@@ -15,7 +15,7 @@ class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
 
   // Data akun dummy untuk login
-  final String _dummyEmail = 'pinto@gmail.com';
+  final String _dummyEmail = '124240118';
   final String _dummyPassword = '118';
 
   @override
@@ -28,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
   void _login() {
     if (!_formKey.currentState!.validate()) return;
 
-    if (_emailController.text.trim() == "pinto@gmail.com" &&
+    if (_emailController.text.trim() == "124240118" &&
         _passwordController.text == "118") {
       // Login Berhasil -> Pindah ke Library Page
       Navigator.pushReplacement(
