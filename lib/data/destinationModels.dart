@@ -33,7 +33,7 @@ List<DestinationModel> destinationList = [
     openingHours: "06.30–16.30",
     ticketInfo: "Cek kanal resmi untuk informasi tiket terbaru.",
     attraction: "Relief, stupa, arsitektur candi, dan pemandangan sekitar.",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/7/77/Borobudur-Nothwest-view.jpg",
+    imageUrl: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Pradaksina.jpg/330px-Pradaksina.jpg?utm_source=id.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
     wikipediaUrl: "https://id.wikipedia.org/wiki/Borobudur",
   ),
   DestinationModel(
@@ -44,7 +44,7 @@ List<DestinationModel> destinationList = [
     openingHours: "Sepanjang hari",
     ticketInfo: "Akses pantai umumnya gratis; biaya parkir dapat berlaku.",
     attraction: "Menikmati sunset, berjalan di tepi pantai, dan berselancar.",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Kuta_Bali_beach.jpg",
+    imageUrl: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Pantai_Kuta_sejuta_cinta.jpg/330px-Pantai_Kuta_sejuta_cinta.jpg?utm_source=id.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
     wikipediaUrl: "https://id.wikipedia.org/wiki/Pantai_Kuta",
   ),
   DestinationModel(
@@ -56,8 +56,7 @@ List<DestinationModel> destinationList = [
     ticketInfo: "Cek informasi resmi untuk tarif dan ketentuan terbaru.",
     attraction:
         "Pengamatan komodo, trekking dengan pemandu, dan panorama laut.",
-    imageUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/5/5b/Komodo_Island.jpg",
+    imageUrl: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Pantai_Kuta_sejuta_cinta.jpg/330px-Pantai_Kuta_sejuta_cinta.jpg?utm_source=id.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
     wikipediaUrl: "https://id.wikipedia.org/wiki/Taman_Nasional_Komodo",
   ),
   DestinationModel(

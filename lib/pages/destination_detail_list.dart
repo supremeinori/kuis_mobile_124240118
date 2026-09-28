@@ -33,7 +33,7 @@ class _DestinationDetailListState extends State<DestinationDetailList> {
             ),
             onPressed: () {
               setState(() {
-                isFavorite = !isFavorite; // Toggle true <-> false
+                isFavorite = !isFavorite;
               });
 
               ScaffoldMessenger.of(context).showSnackBar(
